@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <style>
+        h1, #output {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Event</h1>
+    Button Selected:
+    <span id="output"></span>
+
+    <script>
+        let output = document.getElementById("output");
+
+        // Function to handle mouse events
+        let onMouseEvent = (event) => {
+            let button;
+            switch (event.button) {
+                case 0:
+                    button = "Left";
+                    break;
+                case 1:
+                    button = "Middle";
+                    break;
+                case 2:
+                    button = "Right";
+                    break;
+                default:
+                    button = "Unknown";
+            }
+            output.innerHTML = button;
+        };
+
+        // Attach mouse event listener to the entire document
+        document.addEventListener("mousedown", onMouseEvent);
+    </script>
+</body>
+</html>
